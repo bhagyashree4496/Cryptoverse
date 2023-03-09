@@ -174,7 +174,7 @@ export default function Home({ stats, coins, news, exchanges }) {
           </Grid>
         </Grid>
 
-        <Grid container spacing={2} pt={5}>
+        <Grid container spacing={2} pt={2}>
           {news.map((anews, i) => {
             return (
               <>

@@ -9,9 +9,12 @@ import {
   Typography,
   Avatar,
   Popper,
+  IconButton,
+  Tooltip,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Link } from "react-router-dom";
+import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 
 import { List, ListItem, ListItemIcon, ListItemText } from "@mui/material";
 import HomeIcon from "@mui/icons-material/Home";
@@ -19,7 +22,7 @@ import CurrencyBitcoinIcon from "@mui/icons-material/CurrencyBitcoin";
 import CurrencyExchangeIcon from "@mui/icons-material/CurrencyExchange";
 import { Feed } from "@mui/icons-material";
 
-export default function Navbar() {
+export default function Navbar({ theme, settheme }) {
   const [open, setOpen] = useState(false);
   const [anchorEl, setanchorEl] = useState(null);
   const openorclose = (e) => {
@@ -33,6 +36,9 @@ export default function Navbar() {
       setOpen(false);
     }
   };
+  const handleTheme = () => {
+    settheme(theme === "dark" ? "light" : "dark");
+  };
   return (
     <>
       <AppBar
@@ -43,7 +49,7 @@ export default function Navbar() {
           top: "0",
         }}
       >
-        <Toolbar py={0}>
+        <Toolbar py={0} sx={{ justifyContent: "space-between" }}>
           <Link to="/" className="Link">
             <Box
               sx={{
@@ -79,6 +85,15 @@ export default function Navbar() {
               </Typography>
             </Box>
           </Link>
+          <Tooltip title="Change Theme">
+            <IconButton
+              size="small"
+              onClick={handleTheme}
+              sx={{ color: "#FFFFFF" }}
+            >
+              <DarkModeOutlinedIcon></DarkModeOutlinedIcon>
+            </IconButton>
+          </Tooltip>
         </Toolbar>
       </AppBar>
 

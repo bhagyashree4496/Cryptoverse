@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import { CssBaseline, Grid } from "@mui/material";
+import { createTheme, CssBaseline, Grid, ThemeProvider } from "@mui/material";
 import Menu from "./Components/Menu/Menu";
 import Main from "./Components/Main/Main";
 import Navbar from "./Components/Navbar/Navbar";
@@ -11,6 +11,7 @@ export default function App() {
   const [coins, setcoins] = useState([]);
   const [news, setNews] = useState([]);
   const [exchanges, setExchanges] = useState([]);
+  const [theme, settheme] = useState("dark");
   useEffect(() => {
     getCryptoData().then((data) => {
       console.log(data, "data");
@@ -33,25 +34,33 @@ export default function App() {
   //     console.log(News, "news");
   //   });
   // }, []);
+  const darkTheme = createTheme({
+    palette: {
+      mode: theme,
+    },
+  });
   return (
     <>
-      <CssBaseline />
-      <Grid container rowSpacing={7}>
-        <Grid item xs={12} sx={{ height: "50px" }}>
-          <Navbar></Navbar>
-        </Grid>
-        <Grid item xs={0} lg={2}>
-          <Menu></Menu>
-        </Grid>
-        <Grid item xs={12} lg={10}>
-          <Main
-            stats={stats}
-            coins={coins}
-            news={news}
-            exchanges={exchanges}
-          ></Main>
-        </Grid>
-      </Grid>
+      {" "}
+      <ThemeProvider theme={darkTheme}>
+        <CssBaseline />
+        <Grid container rowSpacing={7}>
+          <Grid item xs={12} sx={{ height: "50px" }}>
+            <Navbar theme={theme} settheme={settheme}></Navbar>
+          </Grid>
+          <Grid item xs={0} lg={2}>
+            <Menu></Menu>
+          </Grid>
+          <Grid item xs={12} lg={10}>
+            <Main
+              stats={stats}
+              coins={coins}
+              news={news}
+              exchanges={exchanges}
+            ></Main>
+          </Grid>
+        </Grid>{" "}
+      </ThemeProvider>
     </>
   );
 }
