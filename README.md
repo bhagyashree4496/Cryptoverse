@@ -1,31 +1,23 @@
-<h1 align="center">Welcome to Cryptoverse 👋</h1>
-<p>
-  <img alt="Version" src="https://img.shields.io/badge/version- -blue.svg?cacheSeconds=2592000" />
-</p>
+# Cryptoverse-Cryptocurrency Information Website
 
-> This project is Created with ReactJS and MaterialUI
+This project is created with ReactJS and MaterialUI.
 
-## Install
+## The data required for this project is fetched from Coinranking API from RapidAPI service.
 
-```sh
-npm install
-```
+## Dark and Night Mode
 
-## Usage
+## Responsive for all devices
 
-```sh
-npm run start
-```
+## Hosted On Netlify
 
-## Run tests
+Website Link: [https://cryptoverse-bp.netlify.app/]
 
-```sh
-npm run test
-```
+## Table of Contents
 
-## Show your support
+##### Home
 
-Give a ⭐️ if this project helped you!
+##### Cryptocurrencies
 
-***
-_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
+##### News
+
+##### Exchanges
