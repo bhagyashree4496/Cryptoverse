@@ -107,8 +107,6 @@ export default function Home({ stats, coins, news, exchanges }) {
               variant="h5"
               sx={{
                 fontWeight: "700",
-
-                textAlign: { xs: "center", sm: "left" },
               }}
             >
               Top 10 Cryptos In The World:
@@ -153,7 +151,6 @@ export default function Home({ stats, coins, news, exchanges }) {
               variant="h5"
               sx={{
                 fontWeight: "700",
-                textAlign: { xs: "center", sm: "left" },
               }}
             >
               Top Cryptocurrency News:
@@ -198,7 +195,6 @@ export default function Home({ stats, coins, news, exchanges }) {
               variant="h5"
               sx={{
                 fontWeight: "700",
-                textAlign: { xs: "center", sm: "left" },
               }}
             >
               Top Cryptocurrency Exchanges:
