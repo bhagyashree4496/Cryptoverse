@@ -1,9 +1,11 @@
 import { Box, Typography } from "@mui/material";
 
-import React from "react";
+import React, { useContext } from "react";
 import Exchange from "./Exchange";
+import { Cryptodatacontext } from "../../Context/Context";
 
-export default function Exchanges({ exchanges }) {
+export default function Exchanges() {
+  const [, , , exchanges] = useContext(Cryptodatacontext);
   return (
     <Box sx={{ py: "15px" }}>
       <Typography variant="h5" my={2}>

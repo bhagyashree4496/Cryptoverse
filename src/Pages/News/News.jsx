@@ -1,9 +1,11 @@
 import { Grid, TextField } from "@mui/material";
 import { Box } from "@mui/system";
-import React from "react";
+import React, { useContext } from "react";
 import Eachnews from "./Eachnews";
+import { Cryptodatacontext } from "../../Context/Context";
 
-export default function news({ news }) {
+export default function News() {
+  const [, , news] = useContext(Cryptodatacontext);
   return (
     <>
       <Box padding={6}>

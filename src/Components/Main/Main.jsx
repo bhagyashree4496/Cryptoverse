@@ -7,31 +7,18 @@ import News from "../../Pages/News/News";
 import Cryptocurrencies from "../../Pages/Cryptocurrency/Cryptocurrencies";
 import { Box } from "@mui/material";
 
-export default function Main({ stats, coins, news, exchanges }) {
+export default function Main() {
   return (
     <Box>
       <div>
         <Routes>
-          <Route
-            path="/"
-            element={
-              <Home
-                stats={stats}
-                coins={coins}
-                news={news}
-                exchanges={exchanges}
-              />
-            }
-          ></Route>
+          <Route path="/" element={<Home />}></Route>
           <Route
             path="/cryptocurrencies"
-            element={<Cryptocurrencies coins={coins} />}
+            element={<Cryptocurrencies />}
           ></Route>
-          <Route
-            path="/exchanges"
-            element={<Exchanges exchanges={exchanges} />}
-          ></Route>
-          <Route path="/news" element={<News news={news} />}></Route>
+          <Route path="/exchanges" element={<Exchanges />}></Route>
+          <Route path="/news" element={<News />}></Route>
         </Routes>
       </div>
       <Footer></Footer>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import {
   Typography,
   Grid,
@@ -11,15 +11,20 @@ import { Link } from "react-router-dom";
 import Cryptocurrency from "./Cryptocurrency/Cryptocurrency";
 import Eachnews from "./News/Eachnews";
 import Exchange from "./exchanges/Exchange";
+import { Cryptodatacontext } from "../Context/Context";
 
-export default function Home({ stats, coins, news, exchanges }) {
-  console.log(stats, coins, "homeeee");
+export default function Home() {
   const f = new Intl.NumberFormat("en-us");
   const g = new Intl.NumberFormat("en-us", {
     currency: "USD",
     style: "currency",
     notation: "compact",
   });
+  const [stats, coins, news, exchanges] = useContext(Cryptodatacontext);
+  useEffect(() => {
+    console.log(stats, coins);
+  });
+
   return (
     <Box sx={{ padding: "10px" }}>
       <Typography variant="h5" sx={{ fontWeight: "700", marginTop: "20px" }}>

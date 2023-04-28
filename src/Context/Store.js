@@ -1,4 +1,6 @@
 import axios from "axios";
+import { Cryptodatacontext } from "./Context";
+import { useEffect, useState } from "react";
 const getNewsData = async () => {
   try {
     const { data } = await axios.get(
@@ -16,51 +18,7 @@ const getNewsData = async () => {
   } catch (error) {
     console.log(error);
   }
-  // const options = {
-  //   method: "GET",
-  //   url: "https://crypto-news16.p.rapidapi.com/news/coindesk",
-  //   headers: {
-  //     "X-RapidAPI-Key": "aa7a7253cfmsh3ac90f0fedea971p10c2d8jsn25bcf218516f",
-  //     "X-RapidAPI-Host": "crypto-news16.p.rapidapi.com",
-  //   },
-  // };
-
-  // axios
-  //   .request(options)
-  //   .then(function (response) {
-  //     console.log(response.data, "newsss");
-  //   })
-  //   .catch(function (error) {
-  //     console.error(error);
-  //   });
 };
-//
-//   const options = {
-//     method: "GET",
-//     url: "https://bing-news-search1.p.rapidapi.com/news/search",
-//     params: {
-//       q: "news",
-//       freshness: "Day",
-//       textFormat: "Raw",
-//       safeSearch: "Off",
-//     },
-//     headers: {
-//       "X-BingApis-SDK": "true",
-//       "X-RapidAPI-Key": "aa7a7253cfmsh3ac90f0fedea971p10c2d8jsn25bcf218516f",
-//       "X-RapidAPI-Host": "bing-news-search1.p.rapidapi.com",
-//     },
-//   };
-
-//   axios
-//     .request(options)
-//     .then(function (response) {
-//       console.log(response.data);
-//       return response.data;
-//     })
-//     .catch(function (error) {
-//       console.error(error);
-//     });
-// };
 const getCryptoData = async () => {
   try {
     const {
@@ -113,4 +71,30 @@ const getExchangesData = async () => {
     console.log(error);
   }
 };
-export { getNewsData, getCryptoData, getExchangesData };
+// context
+
+function Store({ children }) {
+  const [stats, setstats] = useState({});
+  const [coins, setcoins] = useState([]);
+  const [news, setNews] = useState([]);
+  const [exchanges, setExchanges] = useState([]);
+  useEffect(() => {
+    getCryptoData().then((data) => {
+      console.log(data, "data");
+      setstats(data.stats);
+      setcoins(data.coins);
+    });
+    getNewsData().then((News) => {
+      setNews(News);
+    });
+    getExchangesData().then((exchanges) => {
+      setExchanges(exchanges.exchanges);
+    });
+  }, []);
+  return (
+    <Cryptodatacontext.Provider value={[stats, coins, news, exchanges]}>
+      {children}
+    </Cryptodatacontext.Provider>
+  );
+}
+export { getNewsData, getCryptoData, getExchangesData, Store };

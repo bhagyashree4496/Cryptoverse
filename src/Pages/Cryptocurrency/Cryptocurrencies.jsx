@@ -1,8 +1,11 @@
 import { TextField, Box, Grid } from "@mui/material";
-import React from "react";
+import React, { useContext } from "react";
 import Cryptocurrency from "./Cryptocurrency";
+import { Cryptodatacontext } from "../../Context/Context";
 
-export default function Cryptocurrencies({ coins }) {
+export default function Cryptocurrencies() {
+  const [, coins] = useContext(Cryptodatacontext);
+  console.log(coins);
   return (
     <Box padding={6}>
       <TextField
