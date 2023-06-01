@@ -6,7 +6,9 @@ export default function Footer() {
   return (
     <Box
       sx={{
-        backgroundColor: "#001529",
+        background:
+          "linear-gradient(135.9deg, rgb(109, 25, 252) 16.4%, rgb(125, 31, 165) 56.1%)",
+
         width: "100%",
         color: "white",
         display: "flex",

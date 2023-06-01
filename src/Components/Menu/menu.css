@@ -6,9 +6,9 @@
   text-decoration: none;
   color: white;
 }
+.Link:hover {
+  background-color: white;
+}
 .icon {
   color: white;
-}
-.ListItem:hover {
-  background-color: #188fff;
 }

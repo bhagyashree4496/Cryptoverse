@@ -14,7 +14,7 @@ export default function Menu() {
     <>
       <Box
         sx={{
-          backgroundColor: "#001529",
+          backgroundImage: "linear-gradient(to top, #7028e4 0%, #e5b2ca 100% )",
           height: "100vh",
           display: { xs: "none", md: "block" },
           position: "fixed",
@@ -25,11 +25,14 @@ export default function Menu() {
             <List>
               {" "}
               <Link to="/" className="Link">
-                <ListItem className="ListItem">
+                <ListItem
+                  className="ListItem"
+                  sx={{ "&hover": { bgcolor: "white" } }}
+                >
                   <ListItemIcon sx={{ color: "white" }}>
                     <HomeIcon></HomeIcon>
                   </ListItemIcon>
-                  <ListItemText>
+                  <ListItemText sx={{ "&hover": { bgcolor: "white" } }}>
                     {/* <Link to="/" className="Link"> */}
                     Home
                   </ListItemText>

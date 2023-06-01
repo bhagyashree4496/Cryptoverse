@@ -10,7 +10,13 @@ export default function Cryptocurrency({ coin }) {
   });
   return (
     <>
-      <Paper sx={{ "&:hover": { boxShadow: "5px 10px 18px #888888" } }}>
+      <Paper
+        sx={{
+          "&:hover": { boxShadow: "5px 10px 18px #888888" },
+          background:
+            "linear-gradient(109.6deg, rgb(90, 209, 243) 11.2%, rgb(254, 135, 245) 91.1%)",
+        }}
+      >
         <Box padding={2}>
           <Paper elevation={1}>
             <Grid container spacing={0}>

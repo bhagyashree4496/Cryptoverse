@@ -27,7 +27,17 @@ export default function Home() {
 
   return (
     <Box sx={{ padding: "10px" }}>
-      <Typography variant="h5" sx={{ fontWeight: "700", marginTop: "20px" }}>
+      <Typography
+        variant="h5"
+        sx={{
+          fontWeight: "700",
+          marginTop: "20px",
+          background:
+            "linear-gradient(91.9deg, rgb(243, 31, 105) 5.7%, rgb(249, 233, 47) 92.9%)",
+          color: "transparent ",
+          backgroundClip: "text",
+        }}
+      >
         Global Crypto Stats:
       </Typography>
       <Grid container spacing={2}>
@@ -112,6 +122,10 @@ export default function Home() {
               variant="h5"
               sx={{
                 fontWeight: "700",
+                background:
+                  "linear-gradient(91.9deg, rgb(243, 31, 105) 5.7%, rgb(249, 233, 47) 92.9%)",
+                color: "transparent ",
+                backgroundClip: "text",
               }}
             >
               Top 10 Cryptos In The World:
@@ -122,9 +136,9 @@ export default function Home() {
               to="/cryptocurrencies"
               style={{
                 textDecoration: "none",
-                fontWeight: "800",
-                fontSize: "18px",
-                color: "#2f76d3",
+                fontWeight: "500",
+                fontSize: "20px",
+                color: "rgb(243, 31, 105)",
               }}
             >
               Show More
@@ -156,6 +170,10 @@ export default function Home() {
               variant="h5"
               sx={{
                 fontWeight: "700",
+                background:
+                  "linear-gradient(91.9deg, rgb(243, 31, 105) 5.7%, rgb(249, 233, 47) 92.9%)",
+                color: "transparent ",
+                backgroundClip: "text",
               }}
             >
               Top Cryptocurrency News:
@@ -168,7 +186,7 @@ export default function Home() {
                 textDecoration: "none",
                 fontWeight: "800",
                 fontSize: "18px",
-                color: "#2f76d3",
+                color: "rgb(243, 31, 105)",
               }}
             >
               Show More
@@ -200,6 +218,10 @@ export default function Home() {
               variant="h5"
               sx={{
                 fontWeight: "700",
+                background:
+                  "linear-gradient(91.9deg, rgb(243, 31, 105) 5.7%, rgb(249, 233, 47) 92.9%)",
+                color: "transparent ",
+                backgroundClip: "text",
               }}
             >
               Top Cryptocurrency Exchanges:
@@ -212,7 +234,7 @@ export default function Home() {
                 textDecoration: "none",
                 fontWeight: "800",
                 fontSize: "18px",
-                color: "#2f76d3",
+                color: "rgb(243, 31, 105)",
               }}
             >
               Show More

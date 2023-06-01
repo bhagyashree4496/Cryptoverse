@@ -18,10 +18,12 @@ export default function Eachnews({ anews }) {
         sx={{
           height: "330px",
           "&:hover": { boxShadow: "5px 10px 18px #888888" },
+          background:
+            "linear-gradient(109.6deg, rgb(90, 209, 243) 11.2%, rgb(254, 135, 245) 91.1%)",
         }}
       >
         <CardContent>
-          <Stack spacing={1}>
+          <Stack justifyContent="space-between">
             <Typography
               gutterBottom
               variant="h5"

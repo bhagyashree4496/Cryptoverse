@@ -30,6 +30,8 @@ export default function Exchange({ exchange }) {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
+            background:
+              "linear-gradient(109.6deg, rgb(90, 209, 243) 11.2%, rgb(254, 135, 245) 91.1%)",
           }}
         >
           <Typography mx={2}>{`${exchange.rank}.

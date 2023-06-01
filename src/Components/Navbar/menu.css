@@ -4,12 +4,13 @@
 }
 .Link {
   text-decoration: none;
-  color: white;
+
   outline: none;
 }
+
 .icon {
   color: white;
 }
 .ListItem:hover {
-  background-color: #188fff;
+  background-color: rgb(242, 123, 214);
 }

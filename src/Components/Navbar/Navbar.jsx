@@ -43,7 +43,8 @@ export default function Navbar({ theme, settheme }) {
     <>
       <AppBar
         sx={{
-          backgroundColor: "#001529",
+          // backgroundColor: "#001529",
+          backgroundImage: "linear-gradient(to top, #c471f5 0%, #fa71cd 100%)",
           display: "block",
           position: "fixed",
           top: "0",
@@ -69,19 +70,24 @@ export default function Navbar({ theme, settheme }) {
                 }}
               ></MenuIcon>
 
-              <Avatar alt="logo" src={logo} sx={{ ml: "10px" }}></Avatar>
               <Typography
-                variant="h5"
+                variant="h4"
                 href="/"
                 sx={{
                   fontFamily: "monospace",
                   letterSpacing: ".05rem",
-                  color: "white",
+
+                  fontWeight: "600",
                   ml: "5px",
                   display: { xs: "none", md: "block" },
+                  // background:
+                  //   "linear-gradient(to right, #f9d423 0%, #ff4e50 100%)",
+                  // color: "transparent ",
+                  // backgroundClip: "text",
+                  color: "black",
                 }}
               >
-                Cryptoverse
+                Cryptoworld
               </Typography>
             </Box>
           </Link>
@@ -103,7 +109,12 @@ export default function Navbar({ theme, settheme }) {
         onClose={handleclose}
         anchorEl={anchorEl}
         placement="bottom-start"
-        sx={{ backgroundColor: "#001529", width: "100vh" }}
+        sx={{
+          background:
+            "linear-gradient(to right, rgb(101, 78, 163), rgb(234, 175, 200))",
+          width: "100vw",
+          transition: "width 0.1s ease-in",
+        }}
       >
         <div>
           <nav className="navbar">
